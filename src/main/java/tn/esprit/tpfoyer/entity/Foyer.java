@@ -3,6 +3,8 @@ package tn.esprit.tpfoyer.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -14,4 +16,10 @@ public class Foyer {
     private long idFoyer;
     private String nomFoyer;
     private long capaciteFoyer;
+
+    @OneToOne(mappedBy = "Foyer")
+    private Universite Universite;
+
+    @OneToMany(mappedBy = "Foyer")
+    private Set<Bloc> Blocs;
 }

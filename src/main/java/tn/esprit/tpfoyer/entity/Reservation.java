@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -15,4 +16,8 @@ public class Reservation {
     private String idReservation;
     private Date anneeUniversitaire;
     private boolean estValide;
+
+
+    @ManyToMany
+    private Set<Etudiant> Etudiants;
 }

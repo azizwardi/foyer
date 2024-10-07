@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -19,4 +20,7 @@ public class Etudiant {
     private long cin;
     private String ecole;
     private Date dateNaissance;
+
+    @ManyToMany(mappedBy = "Etudiants")
+    private Set<Reservation> Reservations;
 }
